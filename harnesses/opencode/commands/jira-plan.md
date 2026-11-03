@@ -1,39 +1,54 @@
 
 ---
-description: Plan implementation of a Jira ticket
+description: Plan production-quality implementation of a Jira ticket
 agent: plan
 ---
 
 Read Jira ticket $ARGUMENTS using the connected Jira MCP.
 
-Your task is to produce a technical implementation plan for this ticket within the current codebase.
+Act as an expert engineer in the current repository's technology stack.
+Produce an actionable implementation plan. Do not modify code.
 
-## Step 1: Understand the requirements
-- Read the ticket description and acceptance criteria.
-- Identify dependencies and missing requirements.
-- Do not invent requirements.
+## Requirements
+- Read the ticket, acceptance criteria, and relevant linked specifications.
+- Identify dependencies, ambiguities, and missing requirements.
+- Read applicable AGENTS.md instructions and inspect the codebase.
+- Identify the architecture, frameworks, conventions, and relevant code.
+- Follow existing patterns; flag unsafe or conflicting conventions.
+- Do not invent requirements, files, or implementation details.
 
-## Step 2: Investigate the codebase
-- Identify relevant files, classes and interfaces.
-- Understand existing architecture and conventions.
-- Look for reusable implementations and patterns.
-- Avoid unnecessary new abstractions.
+## Implementation Plan
+Include:
+1. **Approach:** Technical solution, key decisions, and tradeoffs.
+2. **Files:** Exact paths, symbols, and expected changes.
+3. **Existing patterns:** Specific implementations and utilities to reuse.
+4. **UI/state/data flow:** Interactions, state ownership, asynchronous behavior,
+   and data movement where applicable.
+5. **Integration points:** Relevant APIs, services, persistence, navigation,
+   dependency injection, analytics, and feature flags.
+6. **Tests:** Unit tests to add/update, edge cases, and other justified tests.
+7. **Risks:** Error handling, lifecycle, concurrency, security, performance,
+   compatibility, and regressions where relevant.
+8. **Manual verification:** Concrete steps and expected outcomes.
+9. **Acceptance criteria:** Map each criterion to changes and verification.
 
-## Step 3: Develop the implementation plan
-- Explain the proposed technical approach.
-- Identify files likely to require changes.
-- Describe necessary tests and verification.
-- Map implementation steps to acceptance criteria.
-- Identify risks and unresolved questions.
-
-## Step 4: Determine implementation granularity
+## Implementation Granularity
 - Assume the ticket is already reasonably scoped.
-- Prefer one cohesive implementation.
-- Recommend smaller slices only when technical complexity, dependencies or risk justify them.
-- Explain why slicing is necessary if recommended.
+- Prefer one cohesive implementation for small tickets.
+- Propose independently verifiable slices only when complexity or risk
+  justifies them; explain the reason, scope, order, and verification.
+- Do not plan work beyond the ticket or approved slice.
+
+## Engineering Standards
+- Production-quality, minimal, safe changes.
+- Follow existing repository architecture and conventions.
+- No unnecessary refactoring, speculative abstractions, or scope expansion.
+- Preserve existing behavior unless changes are explicitly required.
+- Add/update unit tests as needed.
+- Apply stack-specific engineering expertise only where relevant.
 
 ## Constraints
-- Do not modify source code.
-- Do not update Jira.
-- Do not perform unrelated refactoring.
-- Stop after presenting the plan for review.
+- Do not modify code or update Jira.
+- Distinguish verified findings from assumptions.
+- Flag unresolved questions and blockers.
+- Present a concise, actionable plan and stop for review.
