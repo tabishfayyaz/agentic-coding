@@ -14,6 +14,8 @@ Produce an actionable implementation plan. Do not modify code.
 - Identify dependencies, ambiguities, and missing requirements.
 - Read applicable AGENTS.md instructions and inspect the codebase.
 - Identify the architecture, frameworks, conventions, and relevant code.
+- Search the codebase for existing equivalent or related functionality,
+  including implementations with different names or in other features.
 - Follow existing patterns; flag unsafe or conflicting conventions.
 - Do not invent requirements, files, or implementation details.
 
@@ -21,7 +23,7 @@ Produce an actionable implementation plan. Do not modify code.
 Include:
 1. **Approach:** Technical solution, key decisions, and tradeoffs.
 2. **Files:** Exact paths, symbols, and expected changes.
-3. **Existing patterns:** Specific implementations and utilities to reuse.
+3. **Existing code reuse:** Specific existing implementations, utilities, and patterns to reuse or extend, with file paths and symbols. Justify new implementations when similar functionality already exists.
 4. **UI/state/data flow:** Interactions, state ownership, asynchronous behavior,
    and data movement where applicable.
 5. **Integration points:** Relevant APIs, services, persistence, navigation,
@@ -46,6 +48,7 @@ Include:
 - Preserve existing behavior unless changes are explicitly required.
 - Add/update unit tests as needed.
 - Apply stack-specific engineering expertise only where relevant.
+- Prefer reusing or extending existing code over duplicating functionality.
 
 ## Constraints
 - Do not modify code or update Jira.

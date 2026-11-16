@@ -12,6 +12,7 @@ Act as an expert engineer in the current repository's technology stack.
 ## Preconditions
 - Locate the latest clear implementation plan, including agreed revisions.
 - Verify that it applies to the current repository and is not superseded.
+- Verify the plan's code reuse decisions against the current codebase.
 - Approval is not required to preview the plan.
 - If no clear plan exists or its scope is ambiguous, stop and report:
   "BLOCKED: No clear implementation plan is available.
@@ -22,7 +23,7 @@ Include:
 1. **Files:** Exact paths of existing files to modify.
 2. **Changes:** Specific classes, functions, and logic to change
    in each file, with illustrative snippets or diffs where useful.
-3. **New files:** Paths, purpose, and key contents, if any.
+3. **New files:** Paths, purpose, and key contents, if any. Justify new files, classes, or utilities when similar functionality already exists, identifying reusable alternatives by path and symbol.
 4. **Tests:** Unit tests to add/update and scenarios to cover.
 5. **Out of scope:** What will explicitly NOT be changed.
 6. **Risks:** Assumptions, dependencies, edge cases, and regressions.
@@ -34,6 +35,7 @@ Include:
 - Preserve existing behavior unless explicitly required.
 - Apply relevant stack-specific engineering expertise.
 - Identify deviations from the existing plan.
+- Check proposed changes for duplicated functionality, including existing implementations in other features; prefer reuse or extension.
 
 ## Constraints
 - Do not modify code or update external systems.
